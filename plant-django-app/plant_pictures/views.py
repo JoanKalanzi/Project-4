@@ -38,4 +38,10 @@ class PictureDetailView(APIView):
     serialized_picture = PictureSerializer(picture)
     return Response(serialized_picture.data, status=status.HTTP_200_OK)
 
+  def delete(self, _request, pk):
+        picture_to_delete = self.get_picture(pk=pk)
+        picture_to_delete.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 
