@@ -42,6 +42,14 @@ class PictureDetailView(APIView):
         picture_to_delete = self.get_picture(pk=pk)
         picture_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+  
+  def put(self, request, pk):
+        picture_to_edit = self.get_picture(pk=pk)
+        updated_picture = PictureSerializer(picture_to_edit, data=request.data)
+        if updated_picture.is_valid():
+            updated_picture.save()
+            return Response(updated_picture.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_picture.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
 
