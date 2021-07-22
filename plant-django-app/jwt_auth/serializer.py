@@ -12,25 +12,25 @@ class UserSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
 
-        # remove the password and password confirmation from the request body
+       
         password = data.pop('password')
         password_confirmation = data.pop('password_confirmation')
 
-        # check if the passwords match
+      
         if password != password_confirmation:
             raise ValidationError({'password_confirmation': 'Passwords do not match'})
 
-        # check if the password is valid
+       
         try:
             password_validation.validate_password(password=password)
         except ValidationError as err:
             raise ValidationError({'password': err.messages})
 
-        # hash the password, and add back to the dictionary
+   
         data['password'] = make_password(password)
 
         return data
 
     class Meta:
         model = User 
-        fields = ('id', 'username', 'password_confirmation', 'password', 'profile_image')
+        fields = ('id', 'username', 'password_confirmation', 'email','password', 'profile_image')
