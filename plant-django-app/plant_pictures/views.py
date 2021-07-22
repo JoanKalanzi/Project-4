@@ -2,12 +2,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Picture
 from .serializers import PictureSerializer
 
 
 class PictureListView(APIView):
+  permission_classes = (IsAuthenticatedOrReadOnly, )
 
   def get(self, _request):
     pictures = Picture.objects.all()
@@ -26,6 +28,7 @@ class PictureListView(APIView):
 
 
 class PictureDetailView(APIView):
+  permission_classes = (IsAuthenticatedOrReadOnly, )
 
   def get_picture(self, pk):
     try:

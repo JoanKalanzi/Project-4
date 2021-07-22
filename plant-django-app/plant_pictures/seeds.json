@@ -1,0 +1,26 @@
+[
+{
+  "model": "plant_pictures.picture",
+  "pk": 1,
+  "fields": {
+    "title": "Rudy",
+    "image": "https://imgur.com/FHPngpJ"
+  }
+},
+{
+  "model": "plant_pictures.picture",
+  "pk": 2,
+  "fields": {
+    "title": "Blue",
+    "image": "https://imgur.com/VTpFnwP"
+  }
+},
+{
+  "model": "plant_pictures.picture",
+  "pk": 3,
+  "fields": {
+    "title": "sky",
+    "image": "https://m.media-amazon.com/images/M/MV5BZTI3NmJmYT"
+  }
+}
+]
