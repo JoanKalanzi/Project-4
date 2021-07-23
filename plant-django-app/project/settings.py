@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jwt_auth',
     'rest_framework',
+    'plant_family',
     'plant_pictures',
-    'comments',
-    'plant_family'
+    'comments'
+    
 ]
 
 MIDDLEWARE = [
