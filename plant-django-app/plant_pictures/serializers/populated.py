@@ -1,11 +1,11 @@
 from comments.serializers.populated import PopulatedCommentSerializer
 from ..serializers.common import PictureSerializer
-# from genres.serializers.common import GenreSerializer
-from jwt_auth.serializer import UserSerializer
+from plant_family.serializers.common import FamilySerializer
+# from jwt_auth.serializer import UserSerializer
 
 
 class PopulatedPictureSerializer(PictureSerializer):
 
     comments = PopulatedCommentSerializer(many=True)
-    # genres = GenreSerializer(many=True)
+    family= FamilySerializer(many=True)
     # owner = UserSerializer()
