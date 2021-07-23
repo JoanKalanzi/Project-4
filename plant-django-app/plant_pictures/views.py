@@ -5,7 +5,8 @@ from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Picture
-from .serializers import PictureSerializer
+from .serializers.common import PictureSerializer
+from .serializers.populated import PopulatedPictureSerializer
 
 
 class PictureListView(APIView):
@@ -14,7 +15,7 @@ class PictureListView(APIView):
   def get(self, _request):
     pictures = Picture.objects.all()
     print('PICTURES🌱', pictures)
-    serialized_pictures = PictureSerializer(pictures, many=True)
+    serialized_pictures = PopulatedPictureSerializer(pictures, many=True)
     print('SERLIAZED💗', serialized_pictures.data)
     return Response(serialized_pictures.data, status=status.HTTP_200_OK)
 
@@ -38,7 +39,7 @@ class PictureDetailView(APIView):
 
   def get(self, _request, pk):
     picture = self.get_picture(pk=pk)
-    serialized_picture = PictureSerializer(picture)
+    serialized_picture = PopulatedPictureSerializer(picture)
     return Response(serialized_picture.data, status=status.HTTP_200_OK)
 
   def delete(self, _request, pk):

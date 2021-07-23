@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'jwt_auth',
     'rest_framework',
     'plant_pictures',
-    'comments'
+    'comments',
+    'plant_family'
 ]
 
 MIDDLEWARE = [
