@@ -3,15 +3,21 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 // import Home from './components/Home'
 import Register from './components/authentication/Register'
 import Login from './components/authentication/Login'
-// import PlantPictures from './components/PlantPictures'
+import PlantPictures from './components/plants/PlantPictures'
+import Navbar from './components/navbar/Navbar'
 
 
 const App = () => {
 
   return (
     <BrowserRouter>
+     
       <Switch>
-        <Route path = "/register">
+        <Route path = "/plant_pictures/">
+          <Navbar />
+          <PlantPictures />
+        </Route>
+        <Route path = "/register/">
           <Register />
         </Route>
         <Route path="/">

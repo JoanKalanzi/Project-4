@@ -75,7 +75,7 @@ const Login = () => {
               </div>
               <hr/>
               <div className="field mb-4"></div>
-              <div className="field mb-4"><p className="mb-4"> Do not have an account?<Link to="/register">SignUp</Link></p></div>
+              <div className="field mb-4"><p className="mb-4"> Do not have an account?<Link to="/register/">SignUp</Link></p></div>
             </form>
           </div>
         </div>
