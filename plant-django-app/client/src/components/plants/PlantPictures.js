@@ -13,7 +13,7 @@ const PlantPictures = () => {
     const getData = async () => {
 
       try {
-        const { data } = await axios.get('/api/plant_pictures/',
+        const { data } = await axios.get('/api/plant_pictures',
           {
             headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
           }

@@ -18,12 +18,15 @@ const Login = () => {
     setFormdata(formValue)
   }
 
- 
+  const setTokenToLocalStorage = (token) => {
+    window.localStorage.setItem('token', token)
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
       const { data } = await axios.post('api/auth/login/', formdata)
+      setTokenToLocalStorage(data.token)
       setFormdata(data)
       history.push('/plant_pictures/')
     } catch (err) {
