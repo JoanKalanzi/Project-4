@@ -1,3 +1,4 @@
+from jwt_auth.models import User
 from django.db import models
 
 
@@ -7,6 +8,12 @@ class Picture(models.Model):
     family = models.ManyToManyField(
       'plant_family.Family', related_name="pictures"
     )
+    user = models.ForeignKey( 
+        "jwt_auth.User", 
+        related_name="pictures",
+        on_delete= models.CASCADE 
+    )
+
   
 
 

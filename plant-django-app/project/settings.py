@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jwt_auth',
     'rest_framework',
+    'plant_family',
     'plant_pictures',
-    'comments',
-    'plant_family'
+    'comments'
+    
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'plant-mom',
+        'NAME': 'plant-mom2',
         'HOST': 'localhost',
         'PORT': 5432 
     }
