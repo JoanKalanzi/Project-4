@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Link  } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { getTokenFromLocalStorage, getPayload } from '../navbar/auth'
 import axios from 'axios'
 
 
-const PlantCard = ({ id ,title, image, owner, comments }) => {
-  
+const PlantCard = ({ id, title, image, owner, comments }) => {
+  const history = useHistory()
   console.log('id----', id)
 
   const userIsAuthenticated = () => {
@@ -15,11 +15,11 @@ const PlantCard = ({ id ,title, image, owner, comments }) => {
     console.log('payload---->', payload)
     console.log('now--->', now < payload.exp)
     return now < payload.exp
-    
+
   }
   const [formData, setFormData] = useState({
     text: '',
-    pictures: '1',
+    pictures: `${id}`,
   })
 
   const handleChange = (event) => {
@@ -27,30 +27,33 @@ const PlantCard = ({ id ,title, image, owner, comments }) => {
     const commenting = { ...formData, [event.target.name]: event.target.value }
 
     setFormData(commenting)
-    
+
+
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      console.log('id---->',id)
+      console.log('id---->', id)
       await axios.post(
-        
-        '/api/comments',
+
+        '/api/comments/',
         formData,
 
         {
           headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
         }
       )
-      console.log('formData--->' ,formData)
+      // eslint-disable-next-line no-undef
+      setFormData(formData)
+      console.log('formData--->', formData)
     } catch (err) {
       console.log(err)
     }
   }
   console.log('comments----->', comments
   )
- 
+  
 
 
   return (
@@ -77,11 +80,15 @@ const PlantCard = ({ id ,title, image, owner, comments }) => {
             </div>
             <div className="comments"> {comments.map(item => {
               return (<div key={item.id}>
-                <figure className="image is-48x48 m-4 ">
-                  <img className="is-rounded" src={item.owner.profile_image} />
-                  <p>{item.text}</p>
-                </figure>
-                <img src={item.owner.profile_image} /> <p>{item.text}</p>
+                <div className="card-content">
+                  <h2> Comments
+                    <figure className="image is-48x48 m-4 ">
+                      <img className="is-rounded" src={item.owner.profile_image} />
+                      <div className="card-content"><p>{item.text}</p></div>
+                      
+                    </figure>
+                  </h2>
+                </div>
               </div>)
             })}
             </div>
