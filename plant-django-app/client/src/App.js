@@ -5,14 +5,17 @@ import Register from './components/authentication/Register'
 import Login from './components/authentication/Login'
 import PlantPictures from './components/plants/PlantPictures'
 import Navbar from './components/navbar/Navbar'
+import UserProfile from './components/plants/UserProfile'
 
 
 const App = () => {
 
   return (
     <BrowserRouter>
-     
       <Switch>
+        <Route path = "/plant_pictures/:id">
+          <UserProfile />
+        </Route>
         <Route path = "/plant_pictures/">
           <Navbar />
           <PlantPictures />
