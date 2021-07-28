@@ -4,7 +4,8 @@
   "pk": 1,
   "fields": {
     "title": "Rudy",
-    "image": "https://imgur.com/FHPngpJ"
+    "image": "https://imgur.com/FHPngpJ",
+    "owner_id": 1
   }
 },
 {
@@ -12,7 +13,8 @@
   "pk": 2,
   "fields": {
     "title": "Blue",
-    "image": "https://imgur.com/VTpFnwP"
+    "image": "https://imgur.com/VTpFnwP",
+    "owner_id": 2
   }
 },
 {
@@ -20,7 +22,8 @@
   "pk": 3,
   "fields": {
     "title": "sky",
-    "image": "https://m.media-amazon.com/images/M/MV5BZTI3NmJmYT"
+    "image": "https://m.media-amazon.com/images/M/MV5BZTI3NmJmYT",
+    "owner_id": 3
   }
 }
 ]
