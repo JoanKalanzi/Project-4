@@ -25,7 +25,8 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.post('api/auth/login/', formdata)
+      const { data } = await axios.post('/api/auth/login/', formdata)
+      console.log('data.token', data.token)
       setTokenToLocalStorage(data.token)
       setFormdata(data)
       history.push('/plant_pictures/')

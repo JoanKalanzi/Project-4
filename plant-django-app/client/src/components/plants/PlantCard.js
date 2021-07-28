@@ -21,7 +21,7 @@ const PlantCard = ({ id, title, image, owner, comments }) => {
     text: '',
     pictures: `${id}`,
   })
-
+  const [ currentCommet, setCurrentComment ] = useState(comments)
   const handleChange = (event) => {
     console.log('changing')
     const commenting = { ...formData, [event.target.name]: event.target.value }
