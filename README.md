@@ -2,6 +2,9 @@
 <h1>Overview</h1>
 <p>PLANTMOM is a social media platform app where  plant moms  photo share pictures of their plants and can comment on each other's posts.</p>
 
+
+![homepage](https://github.com/JoanKalanzi/Project-4/blob/main/plant-django-app/client/src/assets/Screenshot%202021-09-13%20at%2014.13.17.png?raw=true)
+
 <h1>Deployed app:</h1>
 <h2>Code Installation:</h2>
 <li> Install back-end dependencies: pipenv.</li>
@@ -25,14 +28,14 @@
 <li>Be deployed online so it's publicly accessible.</li>
 
 
-<h1>The Brief</h1>
+<h1>Technologies Used</h1>
 <h2>Backend:</h2>
 <li> Python</li>
 <li>Django</li>
 <li>pyJWT</li>
 <li>TablePlus</li>
 
-<h1>Frontend</h1>
+<h1>Frontend:</h1>
 <li>React</li>
 <li>Axios</li>
 <li>React bootstrap</li>
@@ -40,7 +43,7 @@
 <li>SASS</li>
 <li>React Router Dom</li>
 
-<h1>Development tools</h1>
+<h1>Development tools:</h1>
 <li>VS code</li>
 <li>Yarn</li>
 <li>Insomnia</li>
@@ -60,12 +63,24 @@ For the frontend , I decided to go with a simple four page layout, the user will
 
 </p>
 <h2>Figma:PLANTMOM</h2>
+
+![Figma design](https://github.com/JoanKalanzi/Project-4/blob/main/plant-django-app/client/src/assets/Screenshot%202021-09-13%20at%2013.35.15.png?raw=true)
+
+
 <h2>Relationships</h2>
 <p>Understanding the relationships between the different models was key for the success of the project. With the use of figjam, I was able to map out the models I was going to implement in the project and draw out the relationships linking them together with the star representing many to many relationships and the heart representing a one to many relationship.</p>
 
 <h2>Figjam: Models and Relationships</h2>
+
+![Relationship](https://github.com/JoanKalanzi/Project-4/blob/main/plant-django-app/client/src/assets/Screenshot%202021-09-13%20at%2013.36.54.png?raw=true)
+
+
+
+
 <h3>Asana planning:</h3>
 <p>As this was a solo project, keeping on track everyday on what I was doing was very important to achieving MVP. For this reason, I used Asana to list out of the tasks I needed to achieve and assign them a deadline. I found this very helpful, as this allowed me to become more focused and  accountable for my process.<p/>
+
+![Asana planning](https://github.com/JoanKalanzi/Project-4/blob/main/plant-django-app/client/src/assets/Screenshot%202021-09-13%20at%2014.56.34.png?raw=true)
 
 <h3>Backend:</h3>
 <p>As this was my first time creating a build back-end using Python. I started the development process by building out the above models with views , urls and serializers in Django REST Framework to create a SQL database with RESTful features. To make sure that everything was working as they should, I spent four days building out the models , using TablePuls to visualise my PostgreSql database ,and  Insomnia REST Client to test the backend requests ensuring all relationships between models were working and returned the expected JSON responses.</p>
