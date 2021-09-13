@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getTokenFromLocalStorage, getPayload } from '../navbar/auth'
 import axios from 'axios'
 
 
 const PlantCard = ({ id, title, image, owner, comments }) => {
-  const history = useHistory()
+  // const history = useHistory()
   console.log('id----', id)
 
   const userIsAuthenticated = () => {
@@ -21,7 +21,7 @@ const PlantCard = ({ id, title, image, owner, comments }) => {
     text: '',
     pictures: `${id}`,
   })
-  const [ currentCommet, setCurrentComment ] = useState(comments)
+  // const [ currentCommet, setCurrentComment ] = useState(comments)
   const handleChange = (event) => {
     console.log('changing')
     const commenting = { ...formData, [event.target.name]: event.target.value }

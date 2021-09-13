@@ -19,7 +19,7 @@ const PlantPictures = () => {
     const getData = async () => {
 
       try {
-        const { data } = await axios.get('/api/plant_pictures',
+        const { data } = await axios.get('/api/plant_pictures/',
           {
             headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
           }
@@ -65,7 +65,7 @@ const PlantPictures = () => {
       <div className="container">
         {picture ?
           <div className="columns is-multiline">
-            {picture.map(item => ( < PlantCard key={item.id} owner={item.owner} image ={item.image} title ={item.title} comments ={item.comments} id ={item.id }  />
+            {picture.map(item => (< PlantCard key={item.id} owner={item.owner} image ={item.image} title ={item.title} comments ={item.comments} id ={item.id }  />
             
           
 

@@ -14,13 +14,6 @@ const Navbar = () => {
     history.push('/')
   }
 
-  // const userIsAuthenticated = () => {
-  //   const payload = getPayload()
-  //   if (!payload) return
-  //   const currentTime = Math.round(Date.now() / 1000)
-  //   currentTime < payload.exp
-  // }
-
 
   return (
     <nav className="navbar is-warning ">

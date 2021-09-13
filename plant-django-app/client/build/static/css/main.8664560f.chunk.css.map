@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/main.scss"],"names":[],"mappings":"AAAA,KACE,mBAAA,CAEA,OACE,kBAAA,CAEF,EACE,aAAA","file":"main.8664560f.chunk.css","sourcesContent":["form {\n  margin-bottom:250px;}\n\n  .field {\n    margin-bottom: 30px;\n  }\n  a{\n    color: #fafafa;\n  }\n"]}
